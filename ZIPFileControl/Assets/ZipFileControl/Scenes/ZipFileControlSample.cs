@@ -10,7 +10,7 @@ public class ZipFileControlSample : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         var path = FileIOControl.LocalFolderPath + "\\logo.zip";
-        var coroutine = StartCoroutine(ZipControl.OpenFile(path, FileIOControl.LocalFolderPath, completed));
+        StartCoroutine(ZipControl.OpenFile(path, FileIOControl.LocalFolderPath, completed));
     }
 
     private void completed()
