@@ -30,7 +30,8 @@ namespace ZipFileControl
                 if (File.Exists(name))
                 {
                     var directory = Path.GetDirectoryName(name);
-                    if (Directory.Exists(directory)) Directory.Delete(directory);
+                    var openDirectory = directory + "\\" + Path.GetFileNameWithoutExtension(name);
+                    if (Directory.Exists(openDirectory)) Directory.Delete(openDirectory, true);
                     ZipFile.ExtractToDirectory(name, directory);
                 }
             });
